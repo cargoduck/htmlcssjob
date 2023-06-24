@@ -1,0 +1,384 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	box-sizing: border-box;
+	letter-spacing: 1.2px;
+	color: #000000;
+  }
+
+a{
+    text-decoration: none;
+}
+
+.wrap{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.top-link ul {
+    display: flex;
+    justify-content: flex-end;
+    background:#f6f6f6;
+    padding: 10px 20px ;
+}
+
+.top-link li {
+	position: relative;
+	margin-left: 20px;
+}
+
+.top-link li:hover{
+	opacity:0.5;
+}
+
+.top-link img {
+	margin-right: 6px;
+	height: 15px;
+	width: 15px;
+}
+
+.top-link a{
+	color: #4460a0;
+	font-weight: bolder;
+	display: flex;
+}
+
+/* 參考同學的作法用偽元素去做出間隔的效果，本來是想用border去做但偽元素的效果更佳 */
+
+.fb::after{
+	content: "";
+    background-color: #cccccc;
+	width: 1.25px;
+    height: 100%;
+    position: absolute;
+    right: -12px;
+}
+
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.header h1 a:hover {
+	opacity: 0.6;
+  }
+
+.header h1 a{
+    background: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    height: 50px;
+    transition: all 0.2s;
+	
+}
+
+.header ul {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header ul li{
+	position: relative;
+	margin-left: 40px;
+	
+}
+
+.header li a{
+	color: #00cc99;
+	font-weight: bolder;
+	font-size: 16px;
+}
+
+.header li:hover{
+	opacity: 0.6;
+}
+
+/* 參考同學的互動方式，利用偽元素及「transition」的方式製作出移到連結時下方會有線條的互動動畫效果 */
+
+
+.header .nav li::after{
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	transition: all 0.2s;
+	border-bottom: 4px solid #00cc99;
+	width: 0%;
+	left: 0;
+
+}
+
+.header .nav li:hover::after{
+	border-bottom: 4px solid #00cc99;
+	width: 100%;
+}
+
+.banner{
+	background:url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/banner.png);
+	height: 345px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	margin-bottom: 60px;
+
+}
+
+
+.banner h2{
+	font-size: 36px;
+	line-height: 54px;
+	background:rgba(10, 10, 10, 0.2);
+	color:#ffffff;
+	height: 160px;
+	display: flex;
+	align-items: center;
+	padding: 38px 0px 36px 22px;
+	width: 100%;
+	font-weight: bolder;
+}
+
+.content{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.content-list{
+	width: 305px;
+	text-align: justify;
+	box-shadow: 1px 2px 5px #dbdbdb;
+	border-radius: 0px 0px 10px 10px;
+	border-bottom: 2px #f1f1f1 solid;
+	border-right: 2px #f1f1f1 solid;
+	border-left: 2px #f1f1f1 solid;
+	padding: 20px;
+}
+
+.content-list .content-img{
+	display: flex;
+	justify-content: center;
+	padding: 5px 10px ;
+}
+
+.content-list h3{
+	text-align: center;
+	padding-bottom: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.content-list p{
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+.content-list ul{
+	list-style-type: disc;
+	padding-left:20px ;
+}
+
+.content-list ul li{
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.compare-table{
+	margin: 64px 0px;
+}
+
+.price{
+	width: 840px;
+	margin:28px 80px 0px;
+}
+
+.compare-table h4{
+	font-size: 26px;
+	font-weight: bold;
+	text-align: center;
+}
+.price th{
+	background: #f7f7f7;
+	padding: 8px 0cqw 10px 24px;
+    border-top: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+	font-weight: bolder;
+	text-align: left;
+}
+
+.price td{
+	border-top: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+	padding: 8px 0px 10px 24px;
+}
+
+.color-advantage{
+	color: #02aa74;
+}
+
+.price tr:hover {
+	background: #f5fffa
+}
+
+.contact-form h5{
+	font-size: 26px;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	padding: 38px 0px 30px 0px;
+	line-height: 1.5;
+}
+
+.contact-form{
+	background:linear-gradient(#00644b,#009872) ;
+}
+
+.contact-form form {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	justify-content: space-between;
+}
+
+.contact-form form textarea{
+	width: 48%;
+	border: none;
+	border-radius: 4px 4px 4px 4px;
+	resize: none;
+	height: 245px;
+}
+
+.form-information{
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+}
+
+.form-information span{
+	color: white;
+	font-weight: bold;
+}
+
+.form-information input{
+	padding: 5px 20px;
+	margin-bottom: 15px;
+	position: relative;
+
+}
+
+.form-information button{
+	background-color: #00cc99;
+	font-size: 14px;
+	color: white;
+	border-radius: 4px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	width: 60px;
+	height: 35px;
+	transition: all 0.2s;
+	position: absolute;
+	left: 1356px;
+	bottom: -780px;
+}
+
+.form-information button:hover{
+	background-color: #00c147;
+}
+
+.footer{
+	display: flex;
+	justify-content: space-between;
+	margin-top:27px; 
+	margin-bottom: 50px;
+}
+
+.footer h4 a{
+	background: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/footerLogo.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+	width: 175px;
+	height: 40px;
+	transition: all 0.2s;
+	
+}
+
+.footer li span{
+	color: #e54991;
+}
+
+.footer li{
+	padding-bottom: 10px;
+}
+
+.footer a{
+	transition: all 0.2s;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.footer li a:hover{
+	opacity:0.6;
+	
+}
+
+.footer h4 a:hover{
+	opacity:0.6;
+}
